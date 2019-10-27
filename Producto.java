@@ -1,5 +1,5 @@
 /**
- *  
+ *  Eunate Ibarrola Santesteban
  * Modela un producto. Todo producto tiene un nombre y un  precio unidad 
  */
 public class Producto
@@ -32,8 +32,9 @@ public class Producto
     /**
      * obtiene un nuevo producto copia idéntica del actual
      */
-    public         obtenerCopia() {
-         
+    public void obtenerCopia() {
+        Producto producto = new Producto(getNombre(), 
+                            getPrecio());
     }
 
     /**
@@ -41,7 +42,9 @@ public class Producto
      * (ver enunciado)
      */
     public String toString() {
-        
+       String auxStr = String.format("%30s", getNombre(), "|", 
+                       "%-8.2d", getPrecio(), "unidad");
+       return auxStr;
     }
 
 }

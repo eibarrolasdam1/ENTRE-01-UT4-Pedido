@@ -1,7 +1,7 @@
 
 /**
  *  Clase para probar el resto de clases
- *  
+ *  Eunate Ibarrola Santesteban
  */
 public class TestPedido
 {
