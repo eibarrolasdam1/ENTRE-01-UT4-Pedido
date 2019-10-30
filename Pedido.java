@@ -72,7 +72,7 @@ public class Pedido
         String auxStr1 = String.format("%20s %-8.2f\n", "IMPORTE SIN IVA: ",getImporteAntesIva());
         String auxStr2 = String.format("%20s %-8.2f\n", "IVA: ", getIva());
         String auxStr3 = String.format("%20s %-8.2f\n", "IMPORTE TOTAL: ", getImporteTotal());
-        return "FECHA DE PEDIDO: " + fecha.toString() + cliente.toString() + "\n******* ARTICULOS DEL PEDIDO *******\n\n" + 
+        return "FECHA DE PEDIDO: " + fecha.toString() + "\nDATOS DEL CLIENTE" + cliente.toString() + "\n******* ARTICULOS DEL PEDIDO *******\n\n" + 
         auxProducto1.toString() + linea1.toString() + auxProducto2.toString() + linea2.toString() + 
         "\n******* TOTAL A PAGAR *******\n\n" + auxStr1 + auxStr2 + auxStr3;
     }
