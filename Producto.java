@@ -28,13 +28,13 @@ public class Producto
     public double getPrecio() {
         return precio;
     }
-    
+
     /**
      * obtiene un nuevo producto copia idéntica del actual
      */
     public void obtenerCopia() {
         Producto producto = new Producto(getNombre(), 
-                            getPrecio());
+                getPrecio());
     }
 
     /**
@@ -42,9 +42,20 @@ public class Producto
      * (ver enunciado)
      */
     public String toString() {
-       String auxStr = String.format("%30s", getNombre(), "|", 
-                       "%-8.2d", getPrecio(), "unidad");
-       return auxStr;
+        String auxStr1 = String.format("%30s|\t", getNombre());
+        String auxStr2 = String.format("%8.2f€", getPrecio());
+        return auxStr1 + auxStr2;
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y
+     */
+    public void print()
+    {
+        System.out.println (this.toString());
     }
 
 }
