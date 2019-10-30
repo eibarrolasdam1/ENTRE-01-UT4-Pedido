@@ -52,14 +52,14 @@ public class Pedido
      * calcular y devolver el iva a aplicar
      */
     public double getIva() {
-        return (getImporteAntesIva() * IVA) - getImporteAntesIva();
+        return getImporteAntesIva() * IVA;
     }
 
     /**
      * calcular y devolver el importe total del pedido con Iva
      */
     public double getImporteTotal() {
-        return getImporteAntesIva() * IVA;
+        return getImporteAntesIva() + getIva();
     }
 
     /**
@@ -67,10 +67,14 @@ public class Pedido
      * (ver enunciado)
      */
     public String toString() {
-        String auxStr1 = String.format("%-20s %20s\n", "IMPORTE SIN IVA: ",getImporteAntesIva());
-        String auxStr2 = String.format("%-20s %8.2d\n", "IVA: ", getIva());
-        String auxStr3 = String.format("%-20s %8.2d", "IMPORTE TOTAL: ", getImporteTotal());
-        return "FECHA DE PEDIDO: " + fecha.toString() + cliente.toString() + auxStr1 + auxStr2 + auxStr3;
+        Producto auxProducto1 = linea1.getProducto();
+        Producto auxProducto2 = linea2.getProducto();
+        String auxStr1 = String.format("%20s %-8.2f\n", "IMPORTE SIN IVA: ",getImporteAntesIva());
+        String auxStr2 = String.format("%20s %-8.2f\n", "IVA: ", getIva());
+        String auxStr3 = String.format("%20s %-8.2f\n", "IMPORTE TOTAL: ", getImporteTotal());
+        return "FECHA DE PEDIDO: " + fecha.toString() + cliente.toString() + "\n******* ARTICULOS DEL PEDIDO *******\n\n" + 
+        auxProducto1.toString() + linea1.toString() + auxProducto2.toString() + linea2.toString() + 
+        "\n******* TOTAL A PAGAR *******\n\n" + auxStr1 + auxStr2 + auxStr3;
     }
 
     /**

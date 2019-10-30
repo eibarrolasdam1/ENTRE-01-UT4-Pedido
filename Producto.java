@@ -43,7 +43,7 @@ public class Producto
      */
     public String toString() {
         String auxStr1 = String.format("%30s|\t", getNombre());
-        String auxStr2 = String.format("%8.2f€", getPrecio());
+        String auxStr2 = String.format("%8.2f€ unidad", getPrecio());
         return auxStr1 + auxStr2;
     }
 
